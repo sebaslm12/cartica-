@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Mi Amor 💕</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #98d1e7, lch(0% 0 0));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Georgia', serif;
+    overflow: auto;
+}
+
+#abrir {
+    padding: 18px 35px;
+    font-size: 20px;
+    border: none;
+    border-radius: 40px;
+    background: rgb(0, 0, 0);
+    color: #e91e63;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+#abrir:hover {
+    transform: scale(1.1);
+}
+
+.carta {
+    display: none;
+    background: rgb(0, 0, 0);
+    padding: 40px;
+    max-width: 550px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    text-align: center;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+h1 {
+    color: #e91e63;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+.firma {
+    margin-top: 25px;
+    font-style: italic;
+    font-size: 20px;
+    color: #e91e63;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.heart {
+    position: absolute;
+    color: rgba(255,0,100,0.6);
+    font-size: 18px;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(100vh);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<button id="abrir" onclick="mostrarCarta()">Ábreme 💌</button>
+
+<div class="carta" id="carta">
+    <h1>Para Ti, Mi Amor 💕</h1>
+
+    <p>
+         holiiii mamorchito, espero que te encuentres super bien en este diita
+    te amo demasiado y de verdad que me alegra demaisado pasar esta fecha contigo :3
+    y se que habran muchas otras mas :D
+    </p>
+
+    <p>
+       aprecio y agradezco muchisimo que pasases el tiempito conmigo, cada momentico
+    contigo es lo mejor del mundo, y cada cosa que hacemos se siente como si fuera la primera vez
+    espero pasar mucisimos mas mementos bonitos junto a ti como los que hemos pasado durante
+    estos 8 meses mi amorrrr
+    </p>
+
+    <p>
+       muchisimas gracias por todo mi vida, te amo muuuchiiiiisimo
+    amo tu sonriza, tu carita, tus labios,
+    tus ojazos, tu pelito, tu naricita, tu frentecita preciosa,
+    tu cuerpecito precioso, tu forma de ser, tu forma de hablar,
+    AMOR TODO DE TI MI AMOOOOOR, y gracias por estar en mi vida
+    y por dejarme estar en la tuya :3
+    </p>
+
+    <div class="firma">
+        TE AMOOO isabolita,<br>
+        Sebitash :3 ❤️
+    </div>
+</div>
+
+<audio id="music" loop>
+    <source src="Patrick Watson - Melody Noir (Official Video).mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function mostrarCarta() {
+    document.getElementById("abrir").style.display = "none";
+    document.getElementById("carta").style.display = "block";
+    document.getElementById("music").play();
+    corazones();
+}
+
+function corazones() {
+    setInterval(() => {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "💖";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+        heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
+    }, 400);
+}
+</script>
+
+</body>
+</html>
